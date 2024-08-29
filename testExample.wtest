@@ -1,9 +1,22 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "tests de transportes y heroes" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "ernesto tiene energia inicial" {
+    assert.that(ernesto.energia()!=0)
+  }
+
+  test "ernesto come alfajor y su energia aumenta un 10%"{
+    ernesto.comerAlfajor()
+    assert.equals(55, ernesto.energia())
+  }
+
+  test "el 160 no puede despegar nunca" {
+    assert.notThat(colectivo160.puedeDespegar())
+  }
+
+  test "la mision evitar choque puede ser cumplida por un heroe con suficiente energia"{
+    assert.that(misionEvitarChoque.puedeCumplir(uma))
   }
 
 }
